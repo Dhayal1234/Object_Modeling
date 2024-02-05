@@ -18,7 +18,7 @@ public class CreateContestCommand implements ICommand{
     // Execute create method of IContestService and print the result.
     // Also Handle Exceptions and print the error messsages if any.
     // Look for the unit tests to see the expected output.
-    // Sample Input Token List:- ["CREATE_CONTEST","CRIODO2_CONTEST","LOW Monica","40"]
+    // Sample Input Token List:- ["CREATE_CONTEST","CRIODO2_CONTEST","LOW","Monica","40"]
     // or
     // ["CREATE_CONTEST","CRIODO1_CONTEST","HIGH","Ross"]
     // Hint - Use Parameterized Exceptions in the Service class to match with the Unit Tests Output.
