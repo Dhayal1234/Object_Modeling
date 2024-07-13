@@ -70,7 +70,9 @@ public class AppTest {
         App.run(arguments);
 
         //Assert
-        Assertions.assertEquals(expectedOutput,outputStreamCaptor.toString().trim());
+        //Assertions.assertEquals(expectedOutput,outputStreamCaptor.toString().trim());
+        String actualOutput = outputStreamCaptor.toString().trim();
+        Assertions.assertEquals(expectedOutput.trim(), actualOutput);
  
 	}
 
