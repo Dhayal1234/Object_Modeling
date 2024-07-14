@@ -36,7 +36,8 @@ public class App {
 
     // Initialize repositories and services
     JukeboxDataRepositoryImpl dataRepository = new JukeboxDataRepositoryImpl();
-    JukeboxService jukeboxService = new JukeboxService(dataRepository);
+    //JukeboxService jukeboxService = new JukeboxService(dataRepository);
+    JukeboxService jukeboxService = new JukeboxService();
 
     // Read commands from file and process each command
     List<String> commands = readCommandsFromFile(fileName);

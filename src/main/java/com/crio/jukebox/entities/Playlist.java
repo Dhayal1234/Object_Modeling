@@ -39,12 +39,23 @@ public class Playlist {
         this.songs = songs;
     }
 
+    public void addSong(Song song) {
+        songs.add(song);
+    }
+
+    public void removeSong(Song song) {
+        songs.remove(song);
+    }
+
     @Override
     public String toString() {
-        return "Playlist{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", songs=" + songs +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Playlist ID - ").append(id).append("\n");
+        sb.append("Playlist Name - ").append(name).append("\n");
+        sb.append("Song IDs - ");
+        for (Song song : songs) {
+            sb.append(song.getId()).append(" ");
+        }
+        return sb.toString().trim();
     }
 }

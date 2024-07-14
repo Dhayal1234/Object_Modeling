@@ -1,50 +1,51 @@
 package com.crio.jukebox.entities;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class User {
     private int id;
     private String name;
-    private List<Playlist> playlists;
+    private Map<Integer, Playlist> playlists;
+    private Playlist currentPlaylist;
+    private int currentSongIndex;
 
     public User(int id, String name) {
         this.id = id;
         this.name = name;
-        this.playlists = new ArrayList<>();
+        this.playlists = new HashMap<>();
+        this.currentPlaylist = null;
+        this.currentSongIndex = -1;
     }
 
-    // Getters and Setters
-    public int getId() {
-        return id;
+    public Map<Integer, Playlist> getPlaylists() {
+        return playlists;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Playlist getCurrentPlaylist() {
+        return currentPlaylist;
+    }
+
+    public void setCurrentPlaylist(Playlist currentPlaylist) {
+        this.currentPlaylist = currentPlaylist;
+    }
+
+    public int getCurrentSongIndex() {
+        return currentSongIndex;
+    }
+
+    public void setCurrentSongIndex(int currentSongIndex) {
+        this.currentSongIndex = currentSongIndex;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<Playlist> getPlaylists() {
-        return playlists;
-    }
-
-    public void setPlaylists(List<Playlist> playlists) {
-        this.playlists = playlists;
-    }
-
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", playlists=" + playlists +
-                '}';
+        return id + " " + name;
     }
 }

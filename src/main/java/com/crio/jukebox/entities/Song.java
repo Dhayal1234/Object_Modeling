@@ -8,15 +8,15 @@ public class Song {
     private String genre;
     private String album;
     private String artist;
-    private List<String> featuring;
+    private String featuring;
 
-    public Song(int id, String name, String genre, String album, String artist, List<String> featuring) {
+    public Song(int id, String name, String genre, String album, String artist, String featuring) {
         this.id = id;
         this.name = name;
         this.genre = genre;
         this.album = album;
         this.artist = artist;
-        this.featuring = featuring;
+        this.featuring = featuring.replace("#", ", ");
     }
 
     public Song(int id2, String name2, String artist2, String album2) 
@@ -70,23 +70,21 @@ public class Song {
         this.artist = artist;
     }
 
-    public List<String> getFeaturing() {
-        return featuring;
+    public String getFeaturing() {
+        return featuring.replace("#", ", ");
     }
 
-    public void setFeaturing(List<String> featuring) {
-        this.featuring = featuring;
+    public void setFeaturing(String featuring) {
+        this.featuring = featuring.replace("#", ", ");
     }
 
     @Override
     public String toString() {
-        return "Song{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", genre='" + genre + '\'' +
-                ", album='" + album + '\'' +
-                ", artist='" + artist + '\'' +
-                ", featuring=" + featuring +
-                '}';
+        // Replace all occurrences of ", " and " ," with ","
+        String formattedFeaturing = featuring.replaceAll("\\s*,\\s*", ",");
+
+        return "Song - " + name + "\n" +
+               "Album - " + album + "\n" +
+               "Artists - " + formattedFeaturing;
     }
 }

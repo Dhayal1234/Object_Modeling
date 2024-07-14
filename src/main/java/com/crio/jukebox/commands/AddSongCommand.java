@@ -28,11 +28,11 @@ public class AddSongCommand implements Command {
             String genre = commandArgs[2];
             String album = commandArgs[3];
             String artist = commandArgs[4];
-            List<String> featuring = new ArrayList<>();
+            String featuring = commandArgs[5];
 
-            if (commandArgs.length > 5) {
-                featuring = Arrays.asList(Arrays.copyOfRange(commandArgs, 5, commandArgs.length));
-            }
+            // if (commandArgs.length > 5) {
+            //     featuring = Arrays.asList(Arrays.copyOfRange(commandArgs, 5, commandArgs.length));
+            // }
 
             Song song = new Song(id, name, genre, album, artist, featuring);
             songRepository.addSong(song);

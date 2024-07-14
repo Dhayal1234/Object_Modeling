@@ -36,7 +36,7 @@ public class JukeboxDataRepositoryImpl implements SongRepository, UserRepository
     // UserRepository methods
     @Override
     public void addUser(User user) {
-        users.put(user.getId(), user);
+        //users.put(user.getId(), user);
     }
 
     @Override
@@ -76,7 +76,7 @@ public class JukeboxDataRepositoryImpl implements SongRepository, UserRepository
                     playlist.getSongs().add(song);
                 }
             }
-            user.getPlaylists().add(playlist);
+            //user.getPlaylists().add(playlist);
             addPlaylist(playlist);
         }
     }
@@ -148,16 +148,16 @@ public class JukeboxDataRepositoryImpl implements SongRepository, UserRepository
     public void playNextSong(int userId) {
         User user = users.get(userId);
         if (user != null) {
-            List<Playlist> playlists = user.getPlaylists();
-            for (Playlist playlist : playlists) {
-                // Logic to play the next song
-                List<Song> songs = playlist.getSongs();
-                if (!songs.isEmpty()) {
-                    Song nextSong = songs.get(1); // Assuming the next song is the second song in the list
-                    System.out.println("Playing next song: " + nextSong.getName());
-                    break;
-                }
-            }
+            // List<Playlist> playlists = user.getPlaylists();
+            // for (Playlist playlist : playlists) {
+            //     // Logic to play the next song
+            //     List<Song> songs = playlist.getSongs();
+            //     if (!songs.isEmpty()) {
+            //         Song nextSong = songs.get(1); // Assuming the next song is the second song in the list
+            //         System.out.println("Playing next song: " + nextSong.getName());
+            //         break;
+            //     }
+            // }
         }
     }
 
@@ -165,16 +165,16 @@ public class JukeboxDataRepositoryImpl implements SongRepository, UserRepository
     public void playPreviousSong(int userId) {
         User user = users.get(userId);
         if (user != null) {
-            List<Playlist> playlists = user.getPlaylists();
-            for (Playlist playlist : playlists) {
-                // Logic to play the previous song
-                List<Song> songs = playlist.getSongs();
-                if (!songs.isEmpty()) {
-                    Song previousSong = songs.get(songs.size() - 1); // Assuming the previous song is the last song in the list
-                    System.out.println("Playing previous song: " + previousSong.getName());
-                    break;
-                }
-            }
+            // List<Playlist> playlists = user.getPlaylists();
+            // for (Playlist playlist : playlists) {
+            //     // Logic to play the previous song
+            //     List<Song> songs = playlist.getSongs();
+            //     if (!songs.isEmpty()) {
+            //         Song previousSong = songs.get(songs.size() - 1); // Assuming the previous song is the last song in the list
+            //         System.out.println("Playing previous song: " + previousSong.getName());
+            //         break;
+            //     }
+            // }
         }
     }
 }
