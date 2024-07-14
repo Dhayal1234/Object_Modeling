@@ -83,5 +83,11 @@ public class UserRepository implements IUserRepository{
         .filter(user -> user.getName().equals(name))
         .findFirst();
     }
+
+    public void addUser(com.crio.jukebox.entities.User user) {}
+
+    public Map<Integer, com.crio.jukebox.entities.User> getAllUsers() {
+        return null;
+    }
     
 }
